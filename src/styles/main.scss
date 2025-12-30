@@ -1,0 +1,160 @@
+@use 'variaveis';
+
+
+.fonte-pinyon {
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fonte-birthstone {
+    font-family: "Birthstone", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 28px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario;
+}
+
+.text--big {
+    @include text(25px);
+    color: variaveis.$corTextoPrincipal;
+}
+
+.text {
+    @include text;
+}
+
+.text--big-hero{
+    @include text(40px);
+}
+
+.text--small{
+    @include text(12px);
+}
+
+.link-text {
+    @include text(18px);
+    color: variaveis.$corTextoSecundario;
+    text-decoration: underline;
+}
+
+.title--big{
+    @include title(64px);
+    font-family: "Birthstone", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 50px 
+}
+
+.title {
+    @include title(40px);
+}
+
+.title-hero{
+    @include title(140px);
+}
+
+.title-fim{
+    @include title(80px);
+}
+
+.title--small{
+    @include title(28px);
+}
+
+.caixa__container{
+    position: absolute;
+    right: 30%;
+
+    .title--big {
+        margin-left: 6.3vw;
+    }
+
+    .caixa {
+    background-color: rgba(#0d1b2a, 0.9);
+    }
+
+    p{
+        padding-left: 6px;
+        border-radius: 7px;
+    }
+}
+
+
+
+.image-text-section{
+    padding: 5.6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+    }
+
+    &__text_container {
+        padding: 0 2vw;
+
+        h1{
+            margin-bottom: 24px;
+        }
+    }
+
+    &--image-full-width {
+        display: block;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        &__text_container__hero {
+            position: absolute;
+            top: 0;
+            right: 50%;
+            height: 100%;
+            width: calc(50% - 5.6vw);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__text_container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            width: calc(50% - 5.6vw);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+}
+
+.fim{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+}
